@@ -1,0 +1,58 @@
+# ==============================================================================
+# Git Ignore Configuration - IIT Research Hub (FastSpeech 2 TTS)
+# ==============================================================================
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Audio Datasets & Intermediate Processing (Heavy files)
+raw_data/
+preprocessed_data/
+*/raw_data/
+*/preprocessed_data/
+
+# Model Checkpoints & Large Binaries
+# Preserves directory structure via .gitkeep while ignoring large weight files
+*/checkpoints/[0-9]*.pth.tar
+checkpoints/[0-9]*.pth.tar
+*.ckpt
+
+# HiFi-GAN Vocoder Pretrained Weights (downloaded via setup_hifigan.sh)
+common/hifigan/generator_universal.pth.tar
+common/hifigan/*.zip
+
+# Training Logs & Outputs
+output/
+*/output/
+*.log
+runs/
+.pytest_cache/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
